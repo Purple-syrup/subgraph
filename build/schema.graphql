@@ -1,0 +1,32 @@
+type AddressProviderChange @entity(immutable: true) {
+  id: Bytes!
+  oldAddress: Bytes! # address
+  newAddress: Bytes! # address
+  transactionHash: Bytes!
+}
+
+type CompensateProvider @entity(immutable: true) {
+  id: Bytes!
+  provider: Bytes! # address
+  amount: BigInt! # uint256
+  signalId: BigInt! # uint256
+  userId: BigInt! # uint256
+  transactionHash: Bytes!
+}
+
+
+
+type ProviderAdded @entity(immutable: true) {
+  id: Bytes!
+  provider: Bytes! # address
+  transactionHash: Bytes!
+}
+
+type RegistrarChange @entity(immutable: true) {
+  id: Bytes!
+  oldAddress: Bytes! # address
+  newAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
